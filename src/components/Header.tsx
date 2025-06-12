@@ -3,6 +3,30 @@ import { Menu, X, ShoppingCart, Code, CreditCard } from 'lucide-react';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = navItems.map(item => item.href.substring(1));
+      const currentSection = sections.find(section => {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          return rect.top <= 100 && rect.bottom >= 100;
+        }
+        return false;
+      });
+      
+      if (currentSection) {
+        setActiveSection(currentSection);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial position
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navItems = [
     { name: 'Home', href: '#home' },
@@ -31,7 +55,9 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 font-semibold px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:text-white"
+                className={`text-gray-700 font-semibold px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:text-white ${
+                  activeSection === item.href.substring(1) ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white' : ''
+                }`}
               >
                 {item.name}
               </a>
@@ -57,7 +83,9 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="block px-4 py-2 text-gray-700 font-semibold rounded-lg transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:text-white"
+                className={`block px-4 py-2 text-gray-700 font-semibold rounded-lg transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:text-white ${
+                  activeSection === item.href.substring(1) ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white' : ''
+                }`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.name}
