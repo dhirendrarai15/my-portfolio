@@ -33,12 +33,7 @@
 
 .slick-slide {
   height: inherit !important;
-  opacity: 0.5;
   transition: all 0.3s ease;
-}
-
-.slick-slide.slick-active {
-  opacity: 1;
 }
 
 .slick-slide > div {
@@ -63,7 +58,7 @@
   opacity: 1 !important;
 }
 
-/* Container padding to show arrows */
+/* Slider padding */
 .skills-slider,
 .integration-slider,
 .experience-slider,
@@ -77,16 +72,6 @@
 .experience-slider,
 .project-slider {
   margin-bottom: 3rem;
-}
-
-@media (max-width: 768px) {
-  .slick-prev {
-    left: 10px;
-  }
-  
-  .slick-next {
-    right: 10px;
-  }
 }
 
 @keyframes fadeInUp {
