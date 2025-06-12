@@ -10,40 +10,6 @@
   margin-bottom: 2rem;
 }
 
-.slick-prev,
-.slick-next {
-  z-index: 10;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.9) !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-
-.slick-prev:hover,
-.slick-next:hover {
-  background: white !important;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-  transform: scale(1.1);
-}
-
-.slick-prev {
-  left: -20px;
-}
-
-.slick-next {
-  right: -20px;
-}
-
-.slick-prev:before,
-.slick-next:before {
-  color: #6366f1;
-  font-size: 24px;
-  opacity: 1;
-  transition: all 0.3s ease;
-}
-
 .slick-dots {
   bottom: -30px;
 }

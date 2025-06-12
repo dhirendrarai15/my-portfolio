@@ -89,7 +89,7 @@ const Experience = () => {
             slidesToScroll={1}
             autoplay={true}
             autoplaySpeed={4000}
-            arrows={true}
+            arrows={false}
             className="experience-slider"
           >
             {experiences.map((experience, currentSlide) => (

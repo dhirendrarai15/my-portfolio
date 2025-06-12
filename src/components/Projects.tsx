@@ -197,7 +197,7 @@ const Projects = () => {
             slidesToScroll={1}
             autoplay={true}
             autoplaySpeed={4000}
-            arrows={true}
+            arrows={false}
             className="project-slider"
           >
             {filteredProjects.map((project, index) => (
