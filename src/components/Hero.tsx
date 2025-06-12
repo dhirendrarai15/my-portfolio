@@ -68,9 +68,9 @@ const Hero = () => {
 
       {/* Floating Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-blue-400 rounded-full animate-bounce opacity-60"></div>
-        <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-purple-400 rounded-full animate-bounce opacity-60 animation-delay-1000"></div>
-        <div className="absolute bottom-1/4 left-1/3 w-5 h-5 bg-indigo-400 rounded-full animate-bounce opacity-60 animation-delay-2000"></div>
+        <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-blue-400 rounded-full animate-bounce"></div>
+        <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-purple-400 rounded-full animate-bounce animation-delay-1000"></div>
+        <div className="absolute bottom-1/4 left-1/3 w-5 h-5 bg-indigo-400 rounded-full animate-bounce animation-delay-2000"></div>
       </div>
 
       <div className="container mx-auto px-6 pt-32 pb-20 relative z-10">
@@ -131,13 +131,13 @@ const Hero = () => {
 
           {/* Image Side */}
           <div className="relative animate-fade-in-right">
-            <div className="h-[500px] relative">
+            <div className="h-[500px] relative shadow-xl shadow-blue-500/20 hover:shadow-2xl hover:shadow-blue-600/30 transition-shadow duration-300 rounded-2xl overflow-hidden">
               {/* Image Container with Blend */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
                 <img
                   src={currentSlideData.image}
                   alt={currentSlideData.title}
-                  className="w-full h-full object-cover transition-transform duration-700 opacity-60 mix-blend-multiply"
+                  className="w-full h-full object-cover transition-transform duration-700 mix-blend-multiply"
                 />
               </div>
               
