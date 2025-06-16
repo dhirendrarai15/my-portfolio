@@ -14,16 +14,16 @@ const Projects = () => {
 
   const projects = [
     {
-      title: 'Enterprise Marketplace Platform',
+      title: 'Kount API Integration',
       category: 'ecommerce',
-      description: 'Built a multi-vendor marketplace with integrated payment processing, inventory management, and real-time analytics.',
+      description: 'Integrated Kount’s fraud prevention API to detect and block high-risk transactions in real-time, enhancing payment security.',
       image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80',
       technologies: ['React', 'Node.js', 'Stripe Connect', 'PostgreSQL', 'Redis'],
       features: [
-        'Multi-vendor payment splitting',
-        'Real-time inventory sync',
-        'Advanced analytics dashboard',
-        'Mobile-responsive design'
+         'Real-time fraud scoring and decisioning',
+         'Device fingerprinting for user validation',
+         'Custom risk rule configuration',
+         'Seamless integration with multiple payment gateways'
       ],
       metrics: {
         users: '10K+',
@@ -37,16 +37,16 @@ const Projects = () => {
       color: 'from-green-500 to-emerald-600'
     },
     {
-      title: 'Payment Gateway Orchestrator',
+      title: 'CyberSource Payment Integration',
       category: 'payment',
-      description: 'Developed a unified payment system that routes transactions across multiple payment providers based on success rates and costs.',
+      description: 'Integrated CyberSource payment gateway to enable secure transaction processing, tokenization, and global card support for ecommerce platforms.',
       image: 'https://images.pexels.com/photos/159888/pexels-photo-159888.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80',
       technologies: ['Node.js', 'Stripe', 'PayPal', 'Razorpay', 'MongoDB', 'Docker'],
       features: [
-        'Smart payment routing',
-        'Real-time failure handling',
-        'Cost optimization',
-        'Fraud detection integration'
+       'Secure credit/debit card processing',
+       'Tokenization for PCI compliance',
+       'Support for 3D Secure authentication',
+       'Multi-currency and global payment support'
       ],
       metrics: {
         providers: '5+',
@@ -60,16 +60,16 @@ const Projects = () => {
       color: 'from-purple-500 to-pink-600'
     },
     {
-      title: 'Shopify Inventory Sync App',
+      title: 'OrderBot Integration',
       category: 'integration',
-      description: 'Created a Shopify app that syncs inventory across multiple sales channels and warehouse management systems.',
+      description: 'Integrated OrderBot with ecommerce platforms to automate order processing, inventory sync, and fulfillment workflows.',
       image: 'https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80',
       technologies: ['React', 'Shopify API', 'GraphQL', 'Webhooks', 'AWS Lambda'],
       features: [
-        'Real-time inventory updates',
-        'Multi-channel synchronization',
-        'Automated reorder points',
-        'Detailed reporting'
+         'Automated order import and export',
+         'Real-time inventory synchronization',
+         'Seamless fulfillment status updates',
+         'Custom field and SKU mapping'
       ],
       metrics: {
         installs: '5K+',
@@ -129,16 +129,16 @@ const Projects = () => {
       color: 'from-cyan-500 to-blue-600'
     },
     {
-      title: 'Cryptocurrency Payment Gateway',
+      title: 'Braintree Payment Gateway',
       category: 'payment',
-      description: 'Implemented a crypto payment solution supporting multiple cryptocurrencies with automatic conversion and settlement.',
+      description: 'Implemented a vaulting payment solution supporting to save the card for future Use .',
       image: 'https://images.pexels.com/photos/844124/pexels-photo-844124.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80',
       technologies: ['React', 'Web3.js', 'Ethereum', 'Bitcoin', 'Node.js'],
       features: [
-        'Multi-crypto support',
-        'Automatic conversion',
-        'Smart contract integration',
-        'Real-time exchange rates'
+       'Card vaulting for secure storage',
+       'Seamless one-click checkout',
+       'Tokenization for PCI compliance',
+       'Support for recurring billing'
       ],
       metrics: {
         currencies: '15+',

@@ -34,10 +34,10 @@ const Skills = () => {
       icon: CreditCard,
       color: 'from-blue-500 to-cyan-600',
       skills: [
-        { name: 'Stripe', level: 95 },
-        { name: 'PayPal', level: 90 },
-        { name: 'Razorpay', level: 88 },
-        { name: 'Square', level: 85 }
+        { name: 'Authorize.Net', level: 95 },
+        { name: 'Merchant-E', level: 90 },
+        { name: 'Paypal', level: 88 },
+        { name: 'Fortis', level: 85 }
       ]
     },
     {

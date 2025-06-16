@@ -6,13 +6,13 @@ const Experience = () => {
   const experiences = [
     {
       title: 'Senior Integration Developer',
-      company: 'EcommerceTech Solutions',
-      period: '2022 - Present',
-      location: 'San Francisco, CA',
+      company: 'CommerceV3',
+      period: '2024 - Present',
+      location: 'Florida, FL',
       type: 'Full-time',
       description: 'Leading integration projects for enterprise ecommerce clients, specializing in payment gateway implementations and third-party API connections.',
       achievements: [
-        'Implemented Stripe Connect for multi-vendor marketplace, processing $2M+ monthly',
+        'Implemented Authorize.Net for multi-vendor marketplace, processing $2M+ monthly',
         'Built custom API bridges connecting 15+ third-party services',
         'Reduced payment processing errors by 85% through enhanced error handling',
         'Led team of 4 developers in delivering complex integration projects'
@@ -21,24 +21,24 @@ const Experience = () => {
       color: 'from-blue-500 to-indigo-600'
     },
     {
-      title: 'Ecommerce Integration Specialist',
-      company: 'Digital Commerce Hub',
-      period: '2020 - 2022',
-      location: 'New York, NY',
+      title: 'Ecommerce Integration Developer',
+      company: 'CommerceV3',
+      period: '2023 - 2024',
+      location: 'Florida, FL',
       type: 'Full-time',
       description: 'Specialized in connecting ecommerce platforms with various business systems, payment processors, and marketing tools.',
       achievements: [
-        'Integrated PayPal, Razorpay, and Square payment gateways for 30+ clients',
-        'Developed automated inventory sync between Shopify and warehouse systems',
-        'Created custom Shopify apps with 10K+ active installations',
+        'Integrated PayPal, Authorize.Net, and Merchant-E gateways for 30+ clients',
+        'Developed automated inventory sync between Commercev3 and Orderbot Order Management systems',
+        'Created custom APIs to support scalable integrations and business logic',
         'Improved checkout conversion rates by 25% through payment optimization'
       ],
-      technologies: ['Shopify', 'WooCommerce', 'PayPal API', 'GraphQL', 'MongoDB', 'Docker'],
+      technologies: ['React', 'Nodejs', 'PayPal API', 'GraphQL', 'Postgres', 'Docker'],
       color: 'from-green-500 to-emerald-600'
     },
     {
       title: 'Full Stack Developer',
-      company: 'StartupCommerce',
+      company: 'WebDev Agency',
       period: '2019 - 2020',
       location: 'Austin, TX',
       type: 'Full-time',
@@ -49,14 +49,14 @@ const Experience = () => {
         'Developed mobile-responsive checkout process with 40% mobile conversion',
         'Created analytics dashboard tracking $5M+ in transactions'
       ],
-      technologies: ['Vue.js', 'Laravel', 'MySQL', 'Stripe', 'Redis', 'Digital Ocean'],
+      technologies: ['Vue.js', 'Laravel', 'MySQL', 'Authorize.Net', 'Redis', 'Docker'],
       color: 'from-purple-500 to-pink-600'
     },
     {
       title: 'Junior Developer',
       company: 'WebDev Agency',
-      period: '2018 - 2019',
-      location: 'Chicago, IL',
+      period: '2020 - 2022',
+      location: 'Gurgaon, HR',
       type: 'Full-time',
       description: 'Started career building custom ecommerce websites and learning payment integration fundamentals.',
       achievements: [

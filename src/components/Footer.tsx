@@ -37,7 +37,7 @@ const Footer = () => {
               <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-2 rounded-lg">
                 <ShoppingCart className="w-6 h-6 text-white" />
               </div>
-              <span className="text-xl font-bold">Your Portfolio</span>
+              <span className="text-xl font-bold">Dhirendra Rai</span>
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
               Specialized in building seamless ecommerce integrations and payment solutions 
@@ -95,14 +95,14 @@ const Footer = () => {
                 className="flex items-center text-gray-400 hover:text-white transition-colors"
               >
                 <Mail className="w-4 h-4 mr-2" />
-                your.email@example.com
+                Dhiru.rai15@gmail.com
               </a>
               <a
                 href="tel:+15551234567"
                 className="flex items-center text-gray-400 hover:text-white transition-colors"
               >
                 <Phone className="w-4 h-4 mr-2" />
-                +1 (555) 123-4567
+               +91 8318369313
               </a>
             </div>
             <div className="mt-6 p-4 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-lg border border-blue-500/30">
@@ -116,9 +116,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              © {currentYear} Your Portfolio. Made with{' '}
-              <Heart className="w-4 h-4 inline text-red-500" />{' '}
-              for amazing ecommerce experiences.
+              © {currentYear} Cybertrix.  All rights reserved.
             </p>
             <div className="flex items-center space-x-6 text-sm text-gray-400">
               <a href="#" className="hover:text-white transition-colors">

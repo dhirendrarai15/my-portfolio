@@ -37,21 +37,21 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'your.email@example.com',
-      href: 'mailto:your.email@example.com',
+      value: 'Dhiru.rai15@gmail.com',
+      href: 'mailto:dhiru.rai15@gmail.com',
       color: 'from-blue-500 to-cyan-600'
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+1 (555) 123-4567',
-      href: 'tel:+15551234567',
+      value: '8318369313',
+      href: 'tel:8318369313',
       color: 'from-green-500 to-emerald-600'
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'San Francisco, CA',
+      value: 'Varanasi , U.P',
       href: '#',
       color: 'from-purple-500 to-pink-600'
     }
