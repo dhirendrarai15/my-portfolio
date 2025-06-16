@@ -68,15 +68,16 @@ const Hero = () => {
               <h1 className="text-5xl md:text-6xl font-bold leading-tight text-gray-900">
                 <TypeAnimation
                   sequence={[
-                    'Ecommerce Integration ',
+                    'Ecommerce Integration',
                     2500,
-                    'Payment Gateway ',
+                    'Payment Gateway',
                     2500,
-                    'Third-Party API Integration ',
+                    'Third-Party API Integration',
                     2500,
                   ]}
                   wrapper="span"
-                  speed={35}
+                  speed={0}
+                  preRenderFirstString={true}
                   repeat={Infinity}
                 />
                 <span className="gradient-text">Developer</span>
