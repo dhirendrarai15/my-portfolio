@@ -58,7 +58,7 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[600px]">
           {/* Content Side */}
           
-          <div className="space-y-8 animate-fade-in-up">
+          <div className="space-y-6 animate-fade-in-up">
             <div className="space-y-6">
               <div className="inline-flex items-center bg-white/90 backdrop-blur-sm rounded-full px-4 py-2 shadow-lg animate-slide-in-left">
                 <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
@@ -77,7 +77,6 @@ const Hero = () => {
                   ]}
                   wrapper="span"
                   speed={0}
-                  preRenderFirstString={true}
                   repeat={Infinity}
                 />
                 <span className="gradient-text">Developer</span>
@@ -93,7 +92,7 @@ const Hero = () => {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 max-w-2xl mx-auto relative">
+            <div className="grid grid-cols-3 gap-6 max-w-2xl relative mt-2">
               {contentData.stats.map((stat, index) => (
                 <div 
                   key={index}
