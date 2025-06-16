@@ -1,61 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { ArrowDown, Code, ShoppingCart, CreditCard, Zap, ChevronLeft, ChevronRight, TrendingUp, Users, Globe } from 'lucide-react';
+import React from 'react';
+import { ArrowDown, Code, ShoppingCart, CreditCard, Zap, TrendingUp, Users, Globe } from 'lucide-react';
+import { TypeAnimation } from 'react-type-animation';
 
 const Hero = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const slides = [
-    {
-      title: "Ecommerce Integration Specialist",
-      subtitle: "Building Seamless Digital Commerce",
-      description: "Transforming businesses with cutting-edge third-party integrations, payment gateways, and scalable ecommerce solutions.",
-      image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      stats: [
-        { icon: ShoppingCart, value: "50+", label: "Ecommerce Projects" },
-        { icon: CreditCard, value: "15+", label: "Payment Gateways" },
-        { icon: Code, value: "100+", label: "API Integrations" }
-      ]
-    },
-    {
-      title: "Payment Gateway Expert",
-      subtitle: "Secure & Scalable Solutions",
-      description: "Specialized in implementing robust payment processing systems with Stripe, PayPal, Razorpay, and custom gateway solutions.",
-      image: "https://images.pexels.com/photos/4968391/pexels-photo-4968391.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      stats: [
-        { icon: TrendingUp, value: "$5M+", label: "Processed Volume" },
-        { icon: Zap, value: "99.9%", label: "Uptime Rate" },
-        { icon: Users, value: "10K+", label: "Active Users" }
-      ]
-    },
-    {
-      title: "Third-Party Integration Master",
-      subtitle: "Connecting Systems Seamlessly",
-      description: "Expert in building bridges between platforms, APIs, and services to create unified, efficient business ecosystems.",
-      image: "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      stats: [
-        { icon: Globe, value: "25+", label: "API Partners" },
-        { icon: Code, value: "5+", label: "Years Experience" },
-        { icon: ShoppingCart, value: "98%", label: "Success Rate" }
-      ]
-    }
-  ];
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  const contentData = {
+    currentImage: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    subtitle: "Building Seamless Digital Solutions",
+    description: "Transforming businesses with cutting-edge integrations, payment systems, and scalable solutions.",
+    stats: [
+      { icon: ShoppingCart, value: "50+", label: "Ecommerce Projects" },
+      { icon: CreditCard, value: "15+", label: "Payment Gateways" },
+      { icon: Code, value: "100+", label: "API Integrations" }
+    ]
   };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
-
-  const currentSlideData = slides[currentSlide];
 
   return (
     <section id="home" className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 relative overflow-hidden">
@@ -84,28 +41,37 @@ const Hero = () => {
                 <span className="text-sm font-medium text-gray-700">Available for new projects</span>
               </div>
 
-              <h1 className="text-5xl md:text-6xl font-bold leading-tight text-gray-900 animate-slide-in-left animation-delay-300">
-                {currentSlideData.title.split(' ').map((word, index) => (
-                  <span key={index} className={index === currentSlideData.title.split(' ').length - 1 ? 'bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent' : ''}>
-                    {word}{' '}
-                  </span>
-                ))}
+              <h1 className="text-5xl md:text-6xl font-bold leading-tight text-gray-900">
+                <TypeAnimation
+                  sequence={[
+                    'Ecommerce Integration ',
+                    2500,
+                    'Payment Gateway ',
+                    2500,
+                    'Third-Party API Integration ',
+                    2500,
+                  ]}
+                  wrapper="span"
+                  speed={35}
+                  repeat={Infinity}
+                />
+                <span className="gradient-text">Developer</span>
               </h1>
 
               <h2 className="text-2xl font-semibold text-blue-600 animate-slide-in-left animation-delay-500">
-                {currentSlideData.subtitle}
+                {contentData.subtitle}
               </h2>
 
               <p className="text-xl text-gray-600 leading-relaxed animate-slide-in-left animation-delay-700">
-                {currentSlideData.description}
+                {contentData.description}
               </p>
             </div>
 
             {/* Stats */}
-            <div key={currentSlide} className="grid grid-cols-3 gap-6 max-w-2xl mx-auto relative">
-              {currentSlideData.stats.map((stat, index) => (
+            <div className="grid grid-cols-3 gap-6 max-w-2xl mx-auto relative">
+              {contentData.stats.map((stat, index) => (
                 <div 
-                  key={`${currentSlide}-${index}`}
+                  key={index}
                   className={`bg-white/90 backdrop-blur-sm rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-105 transform-gpu animate-scale-in`}
                   style={{animationDelay: `${index * 150}ms`}}
                 >
@@ -135,25 +101,10 @@ const Hero = () => {
               {/* Image Container with Blend */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
                 <img
-                  src={currentSlideData.image}
-                  alt={currentSlideData.title}
+                  src={contentData.currentImage}
+                  alt="Developer"
                   className="w-full h-full object-cover transition-transform duration-700 mix-blend-multiply"
                 />
-              </div>
-              
-              {/* Slide Indicators */}
-              <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 flex space-x-4">
-                {slides.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentSlide(index)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                      index === currentSlide 
-                        ? 'bg-blue-600 scale-125' 
-                        : 'bg-gray-300 hover:bg-gray-400'
-                    }`}
-                  />
-                ))}
               </div>
             </div>
           </div>
