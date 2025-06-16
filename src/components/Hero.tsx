@@ -3,6 +3,30 @@ import { ArrowDown, Code, ShoppingCart, CreditCard, Zap, TrendingUp, Users, Glob
 import { TypeAnimation } from 'react-type-animation';
 
 const Hero = () => {
+  const [currentSlide, setCurrentSlide] = React.useState(0);
+
+  const slides = [
+    {
+      image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      title: "Ecommerce Integration"
+    },
+    {
+      image: "https://images.pexels.com/photos/4968391/pexels-photo-4968391.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      title: "Payment Gateway"
+    },
+    {
+      image: "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      title: "Third-Party API Integration"
+    }
+  ];
+
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   const contentData = {
     currentImage: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1200",
     subtitle: "Building Seamless Digital Solutions",
@@ -101,10 +125,25 @@ const Hero = () => {
               {/* Image Container with Blend */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
                 <img
-                  src={contentData.currentImage}
-                  alt="Developer"
+                  src={slides[currentSlide].image}
+                  alt={slides[currentSlide].title}
                   className="w-full h-full object-cover transition-transform duration-700 mix-blend-multiply"
                 />
+              </div>
+              
+              {/* Slide Indicators */}
+              <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 flex space-x-4">
+                {slides.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentSlide(index)}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      index === currentSlide 
+                        ? 'bg-blue-600 scale-125' 
+                        : 'bg-gray-300 hover:bg-gray-400'
+                    }`}
+                  />
+                ))}
               </div>
             </div>
           </div>

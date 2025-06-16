@@ -12,6 +12,13 @@
   color: transparent;
 }
 
+.react-type-animation-cursor {
+  background: linear-gradient(to right, #2563eb, #9333ea);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 /* Slider Customization */
 .slick-slider {
   margin-bottom: 2rem;
