@@ -4,14 +4,25 @@ const contactController = {
   // Create a new contact message
   async create(req, res) {
     try {
+      console.log('Received contact form data:', req.body);
       const { name, email, subject, message } = req.body;
       
+      if (!name || !email || !subject || !message) {
+        return res.status(400).json({
+          success: false,
+          message: 'All fields are required'
+        });
+      }
+
       const contact = await Contact.create({
         name,
         email,
         subject,
-        message
+        message,
+        status: 'pending'
       });
+
+      console.log('Created contact:', contact.toJSON());
 
       return res.status(201).json({
         success: true,
@@ -19,7 +30,20 @@ const contactController = {
         data: contact
       });
     } catch (error) {
-      console.error('Error creating contact:', error);
+      console.error('Error creating contact:', {
+        error: error.message,
+        stack: error.stack,
+        body: req.body
+      });
+      
+      if (error.name === 'SequelizeValidationError') {
+        return res.status(400).json({
+          success: false,
+          message: 'Validation error',
+          errors: error.errors.map(e => e.message)
+        });
+      }
+
       return res.status(500).json({
         success: false,
         message: 'Failed to send message',

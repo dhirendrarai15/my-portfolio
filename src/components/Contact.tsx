@@ -23,7 +23,10 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      const response = await fetch('http://localhost:5000/api/contact/messages', {
+      console.log('Submitting form data:', formData);
+      
+      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      const response = await fetch(`${API_URL}/api/contact/messages`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -31,7 +34,9 @@ const Contact = () => {
         body: JSON.stringify(formData)
       });
 
+      console.log('Response status:', response.status);
       const data = await response.json();
+      console.log('Response data:', data);
 
       if (!response.ok) {
         throw new Error(data.message || 'Failed to send message');
@@ -42,9 +47,9 @@ const Contact = () => {
       
       // Reset success message after 5 seconds
       setTimeout(() => setIsSubmitted(false), 5000);
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error sending message:', error);
-      alert('Failed to send message. Please try again.');
+      alert(`Failed to send message: ${error?.message || 'Unknown error occurred'}`);
     } finally {
       setIsSubmitting(false);
     }

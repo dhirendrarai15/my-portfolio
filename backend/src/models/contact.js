@@ -11,38 +11,36 @@ module.exports = (sequelize, DataTypes) => {
     id: {
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV4,
-      primaryKey: true
+      primaryKey: true,
+      field: 'id'
     },
     name: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      field: 'name'
     },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         isEmail: true
-      }
+      },
+      field: 'email'
     },
     subject: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      field: 'subject'
     },
     message: {
       type: DataTypes.TEXT,
-      allowNull: false
+      allowNull: false,
+      field: 'message'
     },
     status: {
       type: DataTypes.ENUM('pending', 'read', 'replied'),
-      defaultValue: 'pending'
-    },
-    createdAt: {
-      type: DataTypes.DATE,
-      allowNull: false
-    },
-    updatedAt: {
-      type: DataTypes.DATE,
-      allowNull: false
+      defaultValue: 'pending',
+      field: 'status'
     }
   }, {
     sequelize,

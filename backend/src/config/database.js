@@ -8,6 +8,11 @@ module.exports = {
     host: process.env.DB_HOST || 'localhost',
     dialect: 'postgres',
     port: process.env.DB_PORT || 5432,
+    logging: console.log,
+    define: {
+      timestamps: true,
+      underscored: true
+    }
   },
   test: {
     username: process.env.DB_USER || 'postgres',
