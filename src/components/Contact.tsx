@@ -22,15 +22,32 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    setFormData({ name: '', email: '', subject: '', message: '' });
-    
-    // Reset success message after 5 seconds
-    setTimeout(() => setIsSubmitted(false), 5000);
+    try {
+      const response = await fetch('http://localhost:5000/api/contact/messages', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Failed to send message');
+      }
+
+      setIsSubmitted(true);
+      setFormData({ name: '', email: '', subject: '', message: '' });
+      
+      // Reset success message after 5 seconds
+      setTimeout(() => setIsSubmitted(false), 5000);
+    } catch (error) {
+      console.error('Error sending message:', error);
+      alert('Failed to send message. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -58,9 +75,9 @@ const Contact = () => {
   ];
 
   const socialLinks = [
-    { icon: Github, href: '#', label: 'GitHub', color: 'hover:bg-gray-800' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn', color: 'hover:bg-blue-600' },
-    { icon: Twitter, href: '#', label: 'Twitter', color: 'hover:bg-blue-400' }
+    { icon: Github, href: 'https://github.com/dhirendrarai15', label: 'GitHub', color: 'hover:bg-gray-800' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/dhirendra-rai-339157169/', label: 'LinkedIn', color: 'hover:bg-blue-600' },
+    { icon: Twitter, href: 'https://twitter.com/dhirajrai', label: 'Twitter', color: 'hover:bg-blue-400' }
   ];
 
   const projectTypes = [

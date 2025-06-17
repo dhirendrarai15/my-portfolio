@@ -22,8 +22,8 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Github, href: '#', label: 'GitHub' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
+    { icon: Github, href: 'https://github.com/dhirendrarai15', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/dhirendra-rai-339157169/', label: 'LinkedIn' },
     { icon: Twitter, href: '#', label: 'Twitter' }
   ];
 
